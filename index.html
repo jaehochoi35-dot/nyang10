@@ -137,16 +137,6 @@ body.night .restart-box{background:#2a1f35;}
   60% {opacity:1;transform:translate(-50%,-50%) scale(1);}
   100%{opacity:0;transform:translate(-50%,-60%) scale(.8);}
 }
-.pvp-status{font-size:10px;font-weight:900;white-space:nowrap;}
-.sum-bar.exact{border-color:var(--mint);background:#f0fffd;}
-.sum-bar.shake{animation:shake .3s ease;}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
-.sum-lbl{font-size:10px;font-weight:800;color:var(--dim);}
-.sum-num{font-size:22px;font-weight:900;color:var(--text);}
-.sum-num.exact{color:var(--mint);}
-.sum-num.close{color:var(--yellow);}
-.sum-tip{font-size:11px;font-weight:800;color:var(--dim);text-align:right;max-width:42%;}
-.sum-tip.exact{color:var(--mint);}
 .grid-wrap{width:100%;border-radius:14px;overflow:visible;background:white;border:2px solid var(--border);box-shadow:0 4px 20px var(--shadow);padding:5px;}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}
 .grid-cell{aspect-ratio:1;position:relative;border-radius:10px;background:var(--bg);border:2px dashed var(--border);}
@@ -540,7 +530,8 @@ window.fbSubmit=async s=>{
   const snap=await get(userRef);
   const prev=snap.exists()?snap.val().score:0;
   if(s>prev){
-    set(userRef,{name:DEVICE_NAME,score:s,t:Date.now()});
+    const latestName=localStorage.getItem('n10_name')||DEVICE_NAME;
+    set(userRef,{name:latestName,score:s,t:Date.now()});
   }
 };
 
