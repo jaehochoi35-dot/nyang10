@@ -1,0 +1,22 @@
+{
+  "name": "냥10 - 고양이 숫자 퍼즐",
+  "short_name": "냥10",
+  "description": "합이 10이 되는 고양이 숫자 퍼즐 게임",
+  "start_url": "/nyang10/",
+  "display": "standalone",
+  "background_color": "#fef6ff",
+  "theme_color": "#ff6eb4",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://emojicdn.elk.sh/🐱?style=apple",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://emojicdn.elk.sh/🐱?style=apple",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
